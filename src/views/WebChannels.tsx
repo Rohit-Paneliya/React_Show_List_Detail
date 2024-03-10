@@ -14,7 +14,9 @@ const WebChannels = () => {
   const dispatcher = useAppDispatch()
 
   useEffect(() => {
-    dispatcher(fetchData())
+    if(state.listOfShows.length === 0) { // if list is empty then only call the api otherwise don't..
+      dispatcher(fetchData())
+    }    
   }, [dispatcher])
 
   const finalData = () => {
@@ -23,7 +25,7 @@ const WebChannels = () => {
     } else if (state.isError) {
       return <h3>Error.....</h3>
     } else {
-      return state.listOfShows.slice(0,10).map((show: any) => {
+      return state.listOfShows.slice(0,25).map((show: any) => {
         const cardWithColumns = (                  
           <Col style={{ marginBottom: '1rem' }}>{MaterialShowCard({ cardData: show })}</Col>          
         )

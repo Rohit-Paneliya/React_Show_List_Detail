@@ -22,9 +22,10 @@ export default function MaterialShowCard({ cardData}: any) {
     }
 
     const linkStyle = { textDecoration: 'none', color: 'white' }
+    const defaultText = "NA"
 
     return (
-        <div key={cardData.id}>
+        <div key={cardData?.id ?? defaultText}>
             <Link style={linkStyle} to={navigateToDetailScreen} state={{ cardDetail: cardData }}>
                 <Card sx={cardHoverStyle}>
                     <CardMedia
@@ -32,12 +33,12 @@ export default function MaterialShowCard({ cardData}: any) {
                         component="img"
                         width="50rem"
                         height="230rem"
-                        image={cardData.image.medium}
+                        image={cardData?.image?.medium ?? defaultText}
                         alt="Show"
                     />
                     <CardContent>
                         <Typography fontSize='15px'>
-                            {cardData.name}
+                            {cardData?.name ?? defaultText}
                         </Typography>
                     </CardContent>
                     <CardActions style={{ marginTop: '-1rem' }}>

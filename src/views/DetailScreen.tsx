@@ -8,6 +8,7 @@ const DetailsScreen = () => {
 
     const locator = useLocation()
     const { cardDetail } = locator.state
+    const defaultText = "NA"
 
     return (
         <Container fluid="md" style={{ margin: '2rem' }}>
@@ -17,25 +18,25 @@ const DetailsScreen = () => {
                         sx={{ objectFit: "fill" }}
                         component="img"
                         style={{ borderRadius: '0.5rem' }}
-                        image={cardDetail.image.original}
+                        image={cardDetail?.image?.original ?? defaultText}
                         alt="Show"
                     />
                 </Col>
                 <Col sm>
                     <Typography gutterBottom variant="h5" component="div">
-                        {cardDetail.name}
+                        {cardDetail?.name ?? defaultText}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        <b>Summary:</b> <div>{parse(cardDetail.summary)}</div>
+                        <b>Summary:</b> <div>{parse(cardDetail?.summary ?? defaultText)}</div>
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         
-                        <b>Genre:</b> {cardDetail.genres.toString()} <br />
-                        <b>Language:</b> {cardDetail.language} <br />
-                        <b>Schedule:</b> {cardDetail.schedule.time} (Timezone: {cardDetail.network.country.timezone}) <br />
-                        <b>Days:</b> {cardDetail.schedule.days.toString()} <br />                    
-                        <b>Premiered:</b> {cardDetail.premiered} <br />
-                        <b>Ended:</b> {cardDetail.ended} <br />
+                        <b>Genre:</b> {cardDetail?.genres?.toString() ?? defaultText} <br />
+                        <b>Language:</b> {cardDetail?.language} <br />
+                        <b>Schedule:</b> {cardDetail?.schedule?.time} (Timezone: {cardDetail?.network?.country?.timezone ?? defaultText}) <br />
+                        <b>Days:</b> {cardDetail.schedule.days?.toString() ?? defaultText} <br />                    
+                        <b>Premiered:</b> {cardDetail?.premiered ?? defaultText} <br />
+                        <b>Ended:</b> {cardDetail?.ended ?? defaultText} <br />
                     
                     </Typography>
                 </Col>
