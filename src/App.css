@@ -1,0 +1,141 @@
+.header {
+  overflow: hidden;
+  height: 50%;
+  background-color: #3f3f3f;
+  padding-top: 0.9rem;
+  padding-left: 3rem;
+  padding-bottom: 1.25rem;
+}
+
+#logo {
+  width: 88%;
+}
+
+.search-input {
+  outline: none;
+  border-radius: 2rem 0 0 2rem;
+  width: 77%;
+  transition: box-shadow 5.5s, border-color .25s ease-in-out;
+  justify-content: first baseline;
+  height: 2.5rem;
+  margin-top: 0.3rem;
+  margin-left: -1.5rem;
+  padding: 0.5333333333rem;
+  border: 0.0625rem solid #cacaca;
+  
+}
+
+
+.search-button {
+  width: 20%;
+  background-color: #3C948B;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-top-right-radius: 1.9rem;
+  border-bottom-right-radius: 1.9rem;
+}
+
+/* Darker background on mouse-over */
+.search-button:hover {
+  background-color: #64e8db;
+}
+
+.row {
+  max-width: none;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.text-button-ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 9rem;
+  overflow: hidden;
+}
+
+.text-button-li {
+  float: inline-start;
+  margin-right: -1rem;
+}
+
+.text-button {
+  border: none;
+  background-color: inherit;
+  color: #ffffff;
+  padding-top: 0.6rem;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  font-weight: 10;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.text-button:hover {
+  color: #3c948b;
+}
+
+@media screen and (max-width: 1060px) {
+
+  .text-button {
+    padding-top: 0.4rem;
+    padding-left: 2rem;
+  }
+
+  .text-button-ul {
+    margin-left: -1rem;
+    padding-left: 1rem;
+  }
+
+  .search-input {
+    width: 75%;
+    margin-bottom: 1rem;
+  }
+
+  .search-button {
+    width: 25%;
+  }
+
+  #logo {
+    width: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  #headerRow {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+  }
+}
+
+/********** CSS for Nav bar - Start************/
+.navbar-ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 2rem;
+  overflow: auto;
+  background-color: #3c948b;
+}
+
+.navbar-li {
+  float: left;
+}
+
+.navbar-li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.625rem 1rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.navbar-li a:hover {
+  background-color: #3f3f3f;
+}
+
+/********** CSS for Nav bar - End************/
