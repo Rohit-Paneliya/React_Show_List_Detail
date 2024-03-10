@@ -1,7 +1,6 @@
 # React App - Show List with Detail
 
-### `Quick Overview`
-<video controls src="src/screenDemo/React_ShowList_Detail_Demo.mp4" title="Demo"></video>
+https://github.com/Rohit-Paneliya/React_Show_List_Detail/screenshots/17030458/0a098ad1-e012-4cde-a1f0-728ebcf8d842
 
 ### `Tech stack used:`
 + Typescript
