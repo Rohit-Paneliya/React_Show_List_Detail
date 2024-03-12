@@ -1,6 +1,7 @@
 import { ErrorBoundary } from 'react-error-boundary';
 import './App.css';
 import HomeScreen from './views/HomeScreen';
+import { ThemeProvider } from './utils/ContextProviderThemes';
 
 function App() {
 
@@ -28,7 +29,9 @@ function App() {
     <ErrorBoundary fallback={<div><h1>Error Boundry.....!!</h1></div>}>
      {/* <ErrorBoundary fallback={errorBoundryUI()}> */}
       <div>
+        <ThemeProvider>
         <HomeScreen />
+        </ThemeProvider>        
       </div>
     </ErrorBoundary>
   );

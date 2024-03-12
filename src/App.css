@@ -1,7 +1,12 @@
+:root {
+   --primary_color: #3C948B;
+   --secondary_color: #3f3f3f;
+}
+
 .header {
   overflow: hidden;
   height: 50%;
-  background-color: #3f3f3f;
+  background-color: var(--secondary_color);
   padding-top: 0.9rem;
   padding-left: 3rem;
   padding-bottom: 1.25rem;
@@ -21,14 +26,13 @@
   margin-top: 0.3rem;
   margin-left: -1.5rem;
   padding: 0.5333333333rem;
-  border: 0.0625rem solid #cacaca;
-  
+  border: 0.0625rem solid #cacaca;  
 }
 
 
 .search-button {
   width: 20%;
-  background-color: #3C948B;
+  background-color: var(--primary_color);
   border: none;
   color: white;
   padding: 0.5rem 0.7rem;
@@ -66,7 +70,7 @@
 .text-button {
   border: none;
   background-color: inherit;
-  color: #ffffff;
+  color: white;
   padding-top: 0.6rem;
   padding-left: 2rem;
   font-size: 1.4rem;
@@ -118,7 +122,15 @@
   margin: 0;
   padding-left: 2rem;
   overflow: auto;
-  background-color: #3c948b;
+  background-color: var(--primary_color);
+}
+
+.navbar-ul-dark {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 2rem;
+  overflow: auto;
+  background-color: black;
 }
 
 .navbar-li {
@@ -135,7 +147,15 @@
 }
 
 .navbar-li a:hover {
-  background-color: #3f3f3f;
+  background-color: var(--secondary_color);
 }
 
 /********** CSS for Nav bar - End************/
+
+.card-list {  
+  background-color: white;
+}
+
+.card-list-dark {  
+  background-color: var(--secondary_color);
+}

@@ -1,15 +1,17 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../slice/ShowListApiSlicer';
 import { Col, Container, Row } from 'react-bootstrap';
 import MaterialShowCard from '../components/MaterialShowCard';
 import { AppDispatch } from '..';
+import ThemeTypeContext, { ThemeType } from '../utils/ContextProviderThemes';
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 
 const WebChannels = () => {
 
   const state = useSelector((state:any) => state.listOfShows)
+  const {themeType} = useContext(ThemeTypeContext)
 
   const dispatcher = useAppDispatch()
 
@@ -18,6 +20,14 @@ const WebChannels = () => {
       dispatcher(fetchData())
     }    
   }, [dispatcher])
+
+  useEffect(() => {
+    if(themeType === ThemeType.LIGHT) {
+        document.getElementById('show-list')!!.className = "card-list"
+    } else {
+        document.getElementById('show-list')!!.className = "card-list-dark"
+    }
+}, [themeType])
 
   const finalData = () => {
     if (state.isLoading) {
@@ -35,13 +45,15 @@ const WebChannels = () => {
   }
 
   return (
-    <Container fluid="md" style={{ marginTop: '2rem', marginLeft: '2.2rem' }}>
+    <div className='card-list' id='show-list'>    
+    <Container fluid="md" style={{ paddingTop: '2rem', marginLeft: '2.2rem' }}>
       <Col sm={11}>
         <Row >
           {finalData()}
         </Row>
       </Col>      
     </Container>
+    </div>
   );
 }
 

@@ -1,7 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../assets/tvmaze_logo.png';
+import { useContext } from 'react';
+import ThemeTypeContext, { ThemeType } from '../utils/ContextProviderThemes';
+import { MaterialUISwitch } from '../components/MaterialSwitchDarkLightMode';
 
 const TopHeader = () => {
+
+    const {setThemeType} = useContext(ThemeTypeContext)
+
+    const onToggleChange = (e: React.ChangeEvent<HTMLInputElement>) => {            
+            if(e.target.checked === true) {
+                setThemeType(ThemeType.DARK)
+            } else {
+                setThemeType(ThemeType.LIGHT)
+            }
+    }
+
     return (
         <div id="header" >
             {/* Header */}
@@ -13,7 +27,7 @@ const TopHeader = () => {
                         <img  id='logo' src={logo} alt="TVMaze Logo" title='TVMaze Logo!'/>
                     </div>
                     {/* Column 2 Search text with button*/}
-                    <div className="col-6">
+                    <div className="col-5">
                         <input type="text" className="search-input" placeholder="Search Shows and People"></input>
                         <button type="submit" className="search-button">
                             <i className="fa fa-search" aria-hidden="true"></i>
@@ -29,6 +43,9 @@ const TopHeader = () => {
                                 <button className="text-button">Register</button>
                             </li>
                         </ul>
+                    </div>
+                    <div className="col-1">
+                        <MaterialUISwitch onChange={onToggleChange}/>                        
                     </div>
                 </div>
 
