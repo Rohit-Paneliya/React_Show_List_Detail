@@ -7,12 +7,12 @@ export enum ThemeType {
 
 export const ThemeTypeContext = createContext<any>(ThemeType.LIGHT);
 
-export const ThemeProvider = ({children}: PropsWithChildren<{}>)=> {
+export const DarkLightThemeProvider = ({ children }: PropsWithChildren<{}>) => {
 
     const [themeType, setThemeType] = useState(ThemeType.LIGHT); // false - light, true - dark
 
     return (
-        <ThemeTypeContext.Provider value={{themeType, setThemeType}}>
+        <ThemeTypeContext.Provider value={{ themeType, setThemeType }}>
             {children}
         </ThemeTypeContext.Provider>
     )

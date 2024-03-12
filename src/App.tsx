@@ -1,16 +1,16 @@
 import { ErrorBoundary } from 'react-error-boundary';
 import './App.css';
 import HomeScreen from './views/HomeScreen';
-import { ThemeProvider } from './utils/ContextProviderThemes';
+import { DarkLightThemeProvider } from './utils/ContextProviderThemes';
 
 function App() {
 
   return (
     <ErrorBoundary fallback={<div><h1>Error Boundry.....!!</h1></div>}>
       <div>
-        <ThemeProvider>
-        <HomeScreen />
-        </ThemeProvider>        
+        <DarkLightThemeProvider>
+          <HomeScreen />
+        </DarkLightThemeProvider>
       </div>
     </ErrorBoundary>
   );
